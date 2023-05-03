@@ -19,7 +19,7 @@ const Menubar = () => {
      <h2>Cooking Your Food</h2>
       <Nav className="mx-auto">
         <Nav.Item>
-          <Link to="/home" className={`nav-link ${isActive('/home')}`}>
+          <Link to="/" className={`nav-link ${isActive('/home')}`}>
             Home
           </Link>
         </Nav.Item>
@@ -30,7 +30,7 @@ const Menubar = () => {
         </Nav.Item>
       </Nav>
       <Nav> 
-   {user? <span>{user.photoURl} <button className='btn btn primary' onClick={handleSignout}>Sign out</button></span>: <Link to="/login">Login</Link> }
+   {user? <span> <img src={user.photoURL} className='w-25 rounded rounded-circle' title={user.displayName} alt="" /><button className='btn btn primary' onClick={handleSignout}>Sign out</button></span>: <Link to="/login">Login</Link> }
       </Nav>
     </Navbar>
         </div>

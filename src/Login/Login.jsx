@@ -13,19 +13,14 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     console.log(location)
-
     const from = location.state?.from?.pathname || '/';
-    
-
     const handleLogin = event => {
         event.preventDefault();
-
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
         form.reset()
-
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
@@ -34,7 +29,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                setError("password not matching or user not found")
+                setError(error.message)
             })
     }
 

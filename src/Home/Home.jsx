@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import { Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import Food from '../Food/Food';
 import TraditionalFood from '../Traditional/TraditionalFood';
@@ -32,11 +33,11 @@ const Home = () => {
            </div>
             <h2 className='text-center mb-4 mt-4 p-4'>In which chef do You Like ?</h2>
        
-        <div className='row row-cols-3 container mt-4 pt-4 '>
+        <Row lg={3} className='g-4'>
         {
             chef.map(singlchef=><SingleChef key={singlchef.id} singlchef={singlchef}></SingleChef>)
            }
-        </div>
+        </Row>
         <div>
         <h1 className='mb-4 mt-4 p-4'>Here is some example in which type food do you like ?</h1>
         <div className='row row-cols-3 '>

@@ -1,10 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 import RecipeAll from '../RecipeAll/RecipeAll';
-
 const ChefRecipe = () => {
 // const {id}=useParams()
+const{loading}=useContext(AuthContext)
 const chefdetails=useLoaderData()
 const {name,image,experience,location}=chefdetails;
 // console.log(chefdetails)

@@ -5,6 +5,7 @@ import Errorpage from "../ErrorPage/Errorpage";
 import Home from "../Home/Home";
 import Layout from "../Layout/Layout";
 import Login from "../Login/Login";
+import PrivateRoute from "../PraivateRout/PraivateRout";
 import Recipe from "../Recipe/ChefRecipe";
 import SignUp from "../Register/SignUp";
 const router=createBrowserRouter([{
@@ -13,7 +14,7 @@ element:<Layout></Layout>,
 errorElement:<Errorpage></Errorpage>,
 children:[
     {
-path:'/home',
+path:"/",
 element:<Home></Home>,
 loader:()=>fetch('http://localhost:5000/tradioionals')
 },
@@ -25,7 +26,7 @@ loader:()=>fetch('http://localhost:5000/tradioionals')
 },
 {
   path:'/details/:id',
-  element: <ChefRecipe></ChefRecipe>,
+  element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
   loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`)
   
 },

@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import './SignUp.css';
@@ -15,9 +14,7 @@ const SignUp = () => {
     const gihublogin = () => {
         handlegithublogin()
     }
-    if (loading) {
-        return <Spinner animation="border" variant="primary" />
-    }
+   
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -44,7 +41,7 @@ const SignUp = () => {
             })
             .catch(error => {
                 console.log(error);
-                setError(error.message);
+                setError("cheeking error");
             })
 
     }
