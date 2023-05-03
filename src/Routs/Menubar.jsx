@@ -5,8 +5,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 const Menubar = () => {
   const location = useLocation();
-  const {user}=useContext(AuthContext)
+  const {user,logOut}=useContext(AuthContext)
   console.log(user)
+  const handleSignout =()=>{
+    logOut()
+  }
   const isActive = (path) => {
     return location.pathname === path ? 'active' : '';
   };
@@ -26,9 +29,8 @@ const Menubar = () => {
           </Link>
         </Nav.Item>
       </Nav>
-      <Nav>
-      <Link to="/login">Login</Link>
-   {user && <span>{useContext.email}</span> }
+      <Nav> 
+   {user? <span>{user.photoURl} <button className='btn btn primary' onClick={handleSignout}>Sign out</button></span>: <Link to="/login">Login</Link> }
       </Nav>
     </Navbar>
         </div>

@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-
 import { Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import './SignUp.css';
 const SignUp = () => {
@@ -26,6 +25,7 @@ const SignUp = () => {
         const password = form.password.value;
         const confirm = form.confirm.value;
         console.log(email, password, confirm)
+        form.reset();
         setError('');
         if (password !== confirm) {
             setError('Your password did not match')
@@ -54,6 +54,10 @@ const SignUp = () => {
             <h2 className='form-title'>Sign Up</h2>
             <form onSubmit={handleSignUp}>
                 <div className="form-control">
+                    <label htmlFor="text">Phot url</label>
+                    <input type="text" name="photo" id="" required />
+                </div>
+                <div className="form-control">
                     <label htmlFor="email">Email</label>
                     <input type="email" name="email" id="" required />
                 </div>
@@ -65,7 +69,7 @@ const SignUp = () => {
                     <label htmlFor="confirm">Confirm Password</label>
                     <input type="password" name="confirm" id="" required />
                 </div>
-                <input className='btn-submit btn-outline-secondary btn' type="submit" value="Sign Up" />
+                <input className='btn-submit btn-outline-secondary btn mb-4' type="submit" value="Sign Up" />
 
             </form>
             <p><small>Already have an account? <Link to="/login">Login</Link></small>

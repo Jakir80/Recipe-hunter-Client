@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Blog/Blog";
 import ChefRecipe from "../Details/ChefRecipe";
+import Errorpage from "../ErrorPage/Errorpage";
 import Home from "../Home/Home";
 import Layout from "../Layout/Layout";
 import Login from "../Login/Login";
@@ -9,7 +10,7 @@ import SignUp from "../Register/SignUp";
 const router=createBrowserRouter([{
 path:'/',
 element:<Layout></Layout>,
-// errorElement:<Errorpage></Errorpage>,
+errorElement:<Errorpage></Errorpage>,
 children:[
     {
 path:'/home',
