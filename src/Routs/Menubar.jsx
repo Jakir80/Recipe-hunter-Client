@@ -16,7 +16,7 @@ const Menubar = () => {
     return (
         <div>
       <Navbar bg="light" expand="lg"  className="justify-content-between p-4">
-     <h2>Cooking Your Food</h2>
+     <h2 className='fw-bold'>Cooking Your Food</h2>
       <Nav className="mx-auto">
         <Nav.Item>
           <Link to="/" className={`nav-link ${isActive('/home')}`}>
@@ -33,7 +33,9 @@ const Menubar = () => {
    {user? <span> <img src={user.photoURL} className='w-25 rounded rounded-circle' title={user.displayName} alt="" /><button className='btn btn primary' onClick={handleSignout}>Sign out</button></span>: <Link to="/login">Login</Link> }
       </Nav>
     </Navbar>
+    
         </div>
+        
     );
 };
 

@@ -31,6 +31,7 @@ const Footer = () => {
         <p className="text-center">
           &copy; {new Date().getFullYear()} Your Food Recipe Website. All Rights Reserved.
         </p>
+        
       </Container>
         </div>
     );

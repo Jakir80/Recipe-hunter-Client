@@ -33,18 +33,18 @@ const Home = () => {
            </div>
             <h2 className='text-center mb-4 mt-4 p-4'>In which chef do You Like ?</h2>
        
-        <Row lg={3} className='g-4'>
+        <Row lg={3} sm={1} className='g-4'>
         {
             chef.map(singlchef=><SingleChef key={singlchef.id} singlchef={singlchef}></SingleChef>)
            }
         </Row>
         <div>
         <h1 className='mb-4 mt-4 p-4'>Here is some example in which type food do you like ?</h1>
-        <div className='row row-cols-3 '>
+        <Row sm={1} lg={3} >
 {
     food.map(fooditem=><Food fooditem={fooditem.key} fooditem={fooditem}></Food>)
 }
-    </div>
+    </Row>
         </div>
         <div>
             <h1 className='text-center text-primary p-4 m-2'>Some Bangladeshi Traditional Food For Each District </h1>
