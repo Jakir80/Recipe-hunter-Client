@@ -1,12 +1,22 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import React, { createContext, useEffect, useState } from 'react';
 import app from "../Firebase/firebase.config";
+// import app from "../Firebase/firebase.config";
 // import app from '../../firebase/firebase.config';
 
-export const AuthContext = createContext(null);
-
+export const AuthContext = createContext(null)
+const googlesign=()=>{
+    const provider = new GoogleAuthProvider()
+    signInWithPopup(auth,provider)
+    .then(result=>{
+        console.log(result.user)
+    })
+    .catch(error=>{
+        console.log(error.message)
+    })
+}
 const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
@@ -26,6 +36,8 @@ const AuthProvider = ({children}) => {
     const logOut = () =>{
         return signOut(auth);
     }
+    
+   
 
     // observer user auth state 
     useEffect( ()=>{
@@ -45,7 +57,8 @@ const AuthProvider = ({children}) => {
         loading,
         createUser,
         signIn,
-        logOut
+        logOut,
+        googlesign,
     }
 
     return (

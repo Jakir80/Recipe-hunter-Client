@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -7,9 +8,12 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import './SignUp.css';
 
 const SignUp = () => {
+   
     const [error, setError] = useState('');
-    const { createUser } = useContext(AuthContext);
-
+    const { createUser,googlesign } = useContext(AuthContext);
+const handlegooglesignin=()=>{
+    googlesign()
+}
     const handleSignUp = event => {
         event.preventDefault();
 
@@ -58,8 +62,13 @@ const SignUp = () => {
                     <input type="password" name="confirm" id="" required />
                 </div>
                 <input className='btn-submit' type="submit" value="Sign Up" />
+               
             </form>
-            <p><small>Already have an account? <Link to="/login">Login</Link></small></p>
+            <p><small>Already have an account? <Link to="/login">Login</Link></small>
+            <button onClick={handlegooglesignin} className='btn btn-lg btn-primary'>sign in with google</button> <br />
+            <button className='btn btn-lg btn-secondary'> sign in with github</button>
+            
+            </p>
             <p className='text-error'>{error}</p>
         </div>
     );
