@@ -9,10 +9,13 @@ import './SignUp.css';
 
 const SignUp = () => {
    
-    const [error, setError] = useState('');
-    const { createUser,googlesign } = useContext(AuthContext);
+    const [error, setError] = useState('');   
+        const { createUser,googlesign, handlegithublogin} = useContext(AuthContext);
 const handlegooglesignin=()=>{
     googlesign()
+}
+const gihublogin=()=>{
+    handlegithublogin()  
 }
     const handleSignUp = event => {
         event.preventDefault();
@@ -66,7 +69,7 @@ const handlegooglesignin=()=>{
             </form>
             <p><small>Already have an account? <Link to="/login">Login</Link></small>
             <button onClick={handlegooglesignin} className='btn btn-lg btn-primary'>sign in with google</button> <br />
-            <button className='btn btn-lg btn-secondary'> sign in with github</button>
+            <button onClick={gihublogin} className='btn btn-lg btn-secondary'> sign in with github</button>
             
             </p>
             <p className='text-error'>{error}</p>

@@ -7,6 +7,7 @@ import './Login.css';
 
 const Login = () => {
     const [show, setShow] = useState(false);
+    const [error,setError]=useState("")
 
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        form.reset()
 
         signIn(email, password)
             .then(result => {
@@ -32,7 +34,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error);
+                setError("password not matching or user not found")
             })
     }
 
@@ -55,7 +57,8 @@ const Login = () => {
                 </div>
                 <input className='btn-submit' type="submit" value="Login" />
             </form>
-            <p><small>New to Ema-john? <Link to="/register">Create New Account</Link></small></p>
+            <p><small>New to this website please Register? <Link to="/register">Create New Account</Link></small></p>
+            <p>{error}</p>
         </div>
     );
 };

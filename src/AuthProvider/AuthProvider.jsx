@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import React, { createContext, useEffect, useState } from 'react';
 import app from "../Firebase/firebase.config";
 // import app from "../Firebase/firebase.config";
@@ -36,6 +36,17 @@ const AuthProvider = ({children}) => {
     const logOut = () =>{
         return signOut(auth);
     }
+    const githubprovider=new GithubAuthProvider();
+    const handlegithublogin=()=>{
+        signInWithPopup(auth,githubprovider)
+        .then(result=>{
+            const user=result.user;
+            console.log(user)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
     
    
 
@@ -59,6 +70,7 @@ const AuthProvider = ({children}) => {
         signIn,
         logOut,
         googlesign,
+        handlegithublogin
     }
 
     return (

@@ -39,7 +39,7 @@ const Home = () => {
         </div>
         <div>
         <h1 className='mb-4 mt-4 p-4'>Here is some example in which type food do you like ?</h1>
-        <div className='row row-cols-3'>
+        <div className='row row-cols-3 '>
 {
     food.map(fooditem=><Food fooditem={fooditem.key} fooditem={fooditem}></Food>)
 }

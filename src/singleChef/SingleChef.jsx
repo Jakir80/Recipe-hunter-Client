@@ -11,7 +11,7 @@ const SingleChef = ({ singlchef }) => {
 
     return (
         <div className='mb-4'>
-            <Card style={{ width: '18rem' }}>
+            <Card >
                 <Card.Body>
                     <Image className='w-100' src={singlchef.image} rounded />
                     <h2>{singlchef.name}</h2>                  
