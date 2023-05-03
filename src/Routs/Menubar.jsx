@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 const Menubar = () => {
   const location = useLocation();
-
+  const {user}=useContext(AuthContext)
+  console.log(user)
   const isActive = (path) => {
     return location.pathname === path ? 'active' : '';
   };
@@ -25,7 +27,8 @@ const Menubar = () => {
         </Nav.Item>
       </Nav>
       <Nav>
-      <p> <Link to="/login">Login</Link></p>
+      <Link to="/login">Login</Link>
+   {user && <span>{useContext.email}</span> }
       </Nav>
     </Navbar>
         </div>

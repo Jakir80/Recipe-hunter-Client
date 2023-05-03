@@ -2,23 +2,23 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { AuthContext } from '../providers/AuthProvider';
-// import { AuthContext } from '../AuthProvider/AuthProvider';
+
 import { Spinner } from 'react-bootstrap';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import './SignUp.css';
-const SignUp = () => {  
-    const [error, setError] = useState('');   
-        const { createUser,googlesign, handlegithublogin,loading} = useContext(AuthContext);
-const handlegooglesignin=()=>{
-    googlesign()
-}
-const gihublogin=()=>{
-    handlegithublogin()  
-}
-if(loading){
-    return <Spinner animation="border" variant="primary" />
-}
+const SignUp = () => {
+    const [error, setError] = useState('');
+    const [success,setSuccess]=useState('')
+    const { createUser, googlesign, handlegithublogin, loading } = useContext(AuthContext);
+    const handlegooglesignin = () => {
+        googlesign()
+    }
+    const gihublogin = () => {
+        handlegithublogin()
+    }
+    if (loading) {
+        return <Spinner animation="border" variant="primary" />
+    }
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -40,6 +40,7 @@ if(loading){
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
+                setSuccess("user created successfully")
             })
             .catch(error => {
                 console.log(error);
@@ -65,15 +66,16 @@ if(loading){
                     <input type="password" name="confirm" id="" required />
                 </div>
                 <input className='btn-submit btn-outline-secondary btn' type="submit" value="Sign Up" />
-               
+
             </form>
             <p><small>Already have an account? <Link to="/login">Login</Link></small>
-            
-            
+
+            <p>{success}</p>
             </p>
-            <button onClick={handlegooglesignin} className='btn btn-lg btn-outline-success m-2 font-bold'>sign in with google</button>  
+            <button onClick={handlegooglesignin} className='btn btn-lg btn-outline-success m-2 font-bold'>sign in with google</button>
             <button onClick={gihublogin} className='btn btn-lg btn-outline-info '> sign in with github</button>
             <p className='text-error'>{error}</p>
+           
         </div>
     );
 };
