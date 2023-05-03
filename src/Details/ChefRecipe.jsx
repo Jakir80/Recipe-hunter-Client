@@ -9,12 +9,12 @@ const chefdetails=useLoaderData()
 const {name,image,experience,location}=chefdetails;
 // console.log(chefdetails)
     return (
-        <div className='container mb-4 pb-4'>
-        <div className="row">
-            <div className="col-lg-8">
+        <div className='container mb-4 pb-4 pt-4 mt-4'>
+        <div className=" d-flex justify-between align-items-center gap-4">
+            <div>
                 <img src={image} alt="" />
             </div>
-            <div className="col-lg-4">
+            <div >
                 <h1>Name: {name}</h1>
                 <h3>{experience}</h3>
                 <p>{location}</p>

@@ -68,10 +68,11 @@ const gihublogin=()=>{
                
             </form>
             <p><small>Already have an account? <Link to="/login">Login</Link></small>
-            <button onClick={handlegooglesignin} className='btn btn-lg btn-primary'>sign in with google</button> <br />
-            <button onClick={gihublogin} className='btn btn-lg btn-secondary'> sign in with github</button>
+            
             
             </p>
+            <button onClick={handlegooglesignin} className='btn btn-lg btn-light m-2 font-bold'>sign in with google</button>  
+            <button onClick={gihublogin} className='btn btn-lg btn-light '> sign in with github</button>
             <p className='text-error'>{error}</p>
         </div>
     );

@@ -19,7 +19,7 @@ const SingleChef = ({ singlchef }) => {
                     <p>Total likes :{singlchef.likes}</p>
                     <p>Number Of Recipe :{singlchef.recipe_number}</p>
                     {/* <Link to={`/services/${singledata?.id}`}> */}
-                    <Link to={`/details/${singlchef.id}`}> <Button variant="primary">View Recipe</Button></Link>
+                    <Link to={`/details/${singlchef.id}`}> <Button className='btn btn-lg btn-info'>View Recipe</Button></Link>
                 </Card.Body>
             </Card>
 

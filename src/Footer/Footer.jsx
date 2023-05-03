@@ -21,11 +21,10 @@ const Footer = () => {
           </Col>
           <Col md={4} className="text-center text-md-right">
             <h4>Follow Us</h4>
-            <div className="social-links">
-              <a href="#"><i className="fab fa-facebook"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
-              <a href="#"><i className="fab fa-twitter"></i></a>
-            </div>
+            <button  className='btn btn-lg btn-outline-info text-muted m-2'>Google</button> 
+            <button className='btn btn-lg btn-outline-info text-muted'>Linkedin</button> <br />
+            <button className='btn btn-lg btn-outline-info m-2 text-muted'>Instagram</button> 
+            <button className='btn btn-lg btn-outline-info text-muted'>You tube</button>
           </Col>
         </Row>
         <hr />
