@@ -4,28 +4,28 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 // import { AuthContext } from '../providers/AuthProvider';
 // import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Spinner } from 'react-bootstrap';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import './SignUp.css';
-
-const SignUp = () => {
-   
+const SignUp = () => {  
     const [error, setError] = useState('');   
-        const { createUser,googlesign, handlegithublogin} = useContext(AuthContext);
+        const { createUser,googlesign, handlegithublogin,loading} = useContext(AuthContext);
 const handlegooglesignin=()=>{
     googlesign()
 }
 const gihublogin=()=>{
     handlegithublogin()  
 }
+if(loading){
+    return <Spinner animation="border" variant="primary" />
+}
     const handleSignUp = event => {
         event.preventDefault();
-
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
         console.log(email, password, confirm)
-
         setError('');
         if (password !== confirm) {
             setError('Your password did not match')
