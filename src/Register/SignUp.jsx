@@ -64,15 +64,15 @@ const gihublogin=()=>{
                     <label htmlFor="confirm">Confirm Password</label>
                     <input type="password" name="confirm" id="" required />
                 </div>
-                <input className='btn-submit' type="submit" value="Sign Up" />
+                <input className='btn-submit btn-outline-secondary btn' type="submit" value="Sign Up" />
                
             </form>
             <p><small>Already have an account? <Link to="/login">Login</Link></small>
             
             
             </p>
-            <button onClick={handlegooglesignin} className='btn btn-lg btn-light m-2 font-bold'>sign in with google</button>  
-            <button onClick={gihublogin} className='btn btn-lg btn-light '> sign in with github</button>
+            <button onClick={handlegooglesignin} className='btn btn-lg btn-outline-success m-2 font-bold'>sign in with google</button>  
+            <button onClick={gihublogin} className='btn btn-lg btn-outline-info '> sign in with github</button>
             <p className='text-error'>{error}</p>
         </div>
     );
