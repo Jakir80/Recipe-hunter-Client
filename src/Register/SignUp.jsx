@@ -6,15 +6,15 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import './SignUp.css';
 const SignUp = () => {
     const [error, setError] = useState('');
-    const [success,setSuccess]=useState('')
-    const { createUser, googlesign, handlegithublogin, loading } = useContext(AuthContext);
+    const [success, setSuccess] = useState('')
+    const { createUser, googlesign, handlegithublogin } = useContext(AuthContext);
     const handlegooglesignin = () => {
         googlesign()
     }
     const gihublogin = () => {
         handlegithublogin()
     }
-   
+
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -71,12 +71,12 @@ const SignUp = () => {
             </form>
             <p><small>Already have an account? <Link to="/login">Login</Link></small>
 
-            <p>{success}</p>
             </p>
+            <p>{success}</p>
             <button onClick={handlegooglesignin} className='btn btn-lg btn-outline-success m-2 font-bold'>sign in with google</button>
             <button onClick={gihublogin} className='btn btn-lg btn-outline-info '> sign in with github</button>
             <p className='text-error'>{error}</p>
-           
+
         </div>
     );
 };

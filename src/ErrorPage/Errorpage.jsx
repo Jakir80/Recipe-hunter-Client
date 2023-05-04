@@ -1,23 +1,18 @@
 import React from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Errorpage = () => {
   return (
-    <Container className="my-5">
-      <Row>
-        <Col>
-        <Link to="/">Back to home page</Link>
-        {/* <NavLink to="/home">back to home page</NavLink> */}
-          <Image src="https://media.istockphoto.com/id/1412359923/photo/a-guy-checks-an-error-404-page-not-found-online-service-notice-message-on-a-website-using-a.webp?s=2048x2048&w=is&k=20&c=CQZrOLBoFHWpH3pxQJD3IpKVHCO0DO-8MLQ80Bd3xk4=" alt="Error" fluid />
-          <h1 className="my-3">Oops! Page Not Found.</h1>
-          <p className="lead">
-            The page you are looking for might have been removed or is temporarily unavailable.
-          </p>
-     
-        </Col>
-      </Row>
-    </Container>
+   <div>
+      <div className='text-center'>
+    <button className='btn btn-outline-info p-4 m-4'><Link to='/'>Back to homepage</Link></button>
+    </div>
+  <div className='text-center mt-4 pt-4'>
+  
+  <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGVycm9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+   </div>
+   <h2 className='text-center mt-4 pt-4'>The page you are searching its not available right now or maybe broken the file . try Again later</h2>
+  </div>
    
   );
 };
