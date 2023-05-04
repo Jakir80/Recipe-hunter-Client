@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Card, Image } from 'react-bootstrap';
@@ -11,8 +12,7 @@ const Food = ({ fooditem }) => {
                 <Card.Body>
                     <Image className='w-100' src={picture} rounded />
                     <h2>{name}</h2>
-                    <p>{description}</p>
-                  
+                    <p>{description}</p>                 
                 </Card.Body>
             </Card>
         </div>

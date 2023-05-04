@@ -10,11 +10,11 @@ import SingleChef from '../singleChef/SingleChef';
 const Home = () => {
     const traditionalfoods = useLoaderData()
     const [chef, setChef] = useState([])
-    fetch('http://localhost:5000/chefes')
+    fetch('https://chef-time-server-site-p1pz8hbzt-jakir80.vercel.app/chefes')
         .then(res => res.json())
         .then(data => setChef(data))
     const [food, setFood] = useState([])
-    fetch('http://localhost:5000/food')
+    fetch('https://chef-time-server-site-p1pz8hbzt-jakir80.vercel.app/food')
         .then(res => res.json())
         .then(data => setFood(data))
     return (

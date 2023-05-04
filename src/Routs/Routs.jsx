@@ -6,42 +6,35 @@ import Home from "../Home/Home";
 import Layout from "../Layout/Layout";
 import Login from "../Login/Login";
 import PrivateRoute from "../PraivateRout/PraivateRout";
-import Recipe from "../Recipe/ChefRecipe";
 import SignUp from "../Register/SignUp";
-const router=createBrowserRouter([{
-path:'/',
-element:<Layout></Layout>,
-errorElement:<Errorpage></Errorpage>,
-children:[
+const router = createBrowserRouter([{
+  path: '/',
+  element: <Layout></Layout>,
+  errorElement: <Errorpage></Errorpage>,
+  children: [
     {
-path:"/",
-element:<Home></Home>,
-loader:()=>fetch('http://localhost:5000/tradioionals')
-},
+      path: "/",
+      element: <Home></Home>,
+      loader: () => fetch('https://chef-time-server-site-p1pz8hbzt-jakir80.vercel.app/tradioionals')
+    },
+    {
+      path: '/details/:id',
+      element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
+      loader: ({ params }) => fetch(`https://chef-time-server-site-p1pz8hbzt-jakir80.vercel.app/details/${params.id}`)
 
-{
-    path:'/recipe',
-    element:<Recipe></Recipe>
-
-},
-{
-  path:'/details/:id',
-  element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
-  loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`)
-  
-},
-{
-  path:'/register',
-  element:<SignUp></SignUp>
-},
-{
-  path:'/login',
-  element:<Login></Login>
-},
-{
-  path:'/blog',
-  element:<Blog></Blog>
-}
- ] 
+    },
+    {
+      path: '/register',
+      element: <SignUp></SignUp>
+    },
+    {
+      path: '/login',
+      element: <Login></Login>
+    },
+    {
+      path: '/blog',
+      element: <Blog></Blog>
+    }
+  ]
 }])
 export default router;

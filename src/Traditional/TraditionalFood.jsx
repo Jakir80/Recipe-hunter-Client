@@ -5,8 +5,8 @@ const TraditionalFood = ({ singleFood }) => {
     return (
         <div>
             <Card className='mb-4' >
-                <Card.Body className=''>              
-                    <h2 className='text-center'>District Name :  {singleFood.name}</h2>                
+                <Card.Body className=''>
+                    <h2 className='text-center'>District Name :  {singleFood.name}</h2>
                     <h4> Traditional Food  : {singleFood.traditionalFood.name}</h4>
                     <p>{singleFood.traditionalFood.description}</p>
                 </Card.Body>

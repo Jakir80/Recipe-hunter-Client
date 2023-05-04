@@ -6,22 +6,21 @@ import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 const SingleChef = ({ singlchef }) => {
+    const { image, name, experience, likes, recipe_number, id } = singlchef;
     return (
         <div className='mb-4'>
-          <Col>
-          <Card className='h-100' >
-                    <Card.Img variant='top h-75' src={singlchef.image} />
-                <Card.Body className='h-100'>
-                    <h2>{singlchef.name}</h2>                  
-                    <p>{singlchef.experience}</p>                  
-                    <p>Total likes :{singlchef.likes}</p>
-                    <p>Number Of Recipe :{singlchef.recipe_number}</p>                 
-                    <Link to={`/details/${singlchef.id}`}> <Button className='btn btn-lg btn-info text-white fw-bold'>View Recipe</Button></Link>
-                </Card.Body>
-            </Card>
-          </Col>
-
-
+            <Col>
+                <Card className='h-100' >
+                    <Card.Img variant='top h-75' src={image} />
+                    <Card.Body className='h-100'>
+                        <h2>{name}</h2>
+                        <p>{experience}</p>
+                        <p>Total likes :{likes}</p>
+                        <p>Number Of Recipe :{recipe_number}</p>
+                        <Link to={`/details/${id}`}> <Button className='btn btn-lg btn-info text-white fw-bold'>View Recipe</Button></Link>
+                    </Card.Body>
+                </Card>
+            </Col>
         </div>
     );
 };
