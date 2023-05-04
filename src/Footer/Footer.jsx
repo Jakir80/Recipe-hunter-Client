@@ -4,10 +4,10 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <div>
+        <div className='bg-black text-white p-4 rounded  '>
      <Container>
         <Row>
-          <Col md={4} className="text-center text-md-left">
+          <Col md={4} className="text-center text-md-left ">
             <h4>About Us</h4>
             <p>
               We are a food recipe website dedicated to bringing you delicious and healthy recipes to try at home.
@@ -16,7 +16,8 @@ const Footer = () => {
           <Col md={4} className="text-center">
             <h4>Contact Us</h4>
             <p>
-              <i className="fa fa-envelope"></i> info@yourfoodrecipewebsite.com
+              <i className="fa fa-envelope"></i> info@yourfoodrecipewebsite.com <br />
+              Dhaka,Bangladesh
             </p>
           </Col>
           <Col md={4} className="text-center text-md-right">
