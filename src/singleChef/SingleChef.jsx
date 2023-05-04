@@ -16,7 +16,7 @@ const SingleChef = ({ singlchef }) => {
                     <p>{singlchef.experience}</p>                  
                     <p>Total likes :{singlchef.likes}</p>
                     <p>Number Of Recipe :{singlchef.recipe_number}</p>                 
-                    <Link to={`/details/${singlchef.id}`}> <Button className='btn btn-lg btn-info'>View Recipe</Button></Link>
+                    <Link to={`/details/${singlchef.id}`}> <Button className='btn btn-lg btn-info text-white fw-bold'>View Recipe</Button></Link>
                 </Card.Body>
             </Card>
           </Col>

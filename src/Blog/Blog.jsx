@@ -23,7 +23,7 @@ const Blog = () => {
                 <p className='p-2'> Custom React JS hooks offer reusability as when a custom hook is created, it can be reused easily, which makes the code cleaner and reduces the time to write the code. It also enhances the rendering speed of the code as a custom hook does not need to be rendered again and again while rendering the whole code</p>
             </div>
            <div className='text-center p-4'>
-           <Pdf targetRef={ref} filename="Recipe.pdf">
+           <Pdf targetRef={ref} filename="blog-answer.pdf">
                 {({ toPdf }) => <button className='btn btn-lg btn-outline-info' onClick={toPdf}>Download Blog Answer</button>}
             </Pdf>
            </div>

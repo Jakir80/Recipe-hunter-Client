@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Row } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import Food from '../Food/Food';
 import TraditionalFood from '../Traditional/TraditionalFood';
 import SingleChef from '../singleChef/SingleChef';
@@ -28,7 +28,7 @@ const Home = () => {
                 <p>Are you need new cooking Recipe ?
                     you can visit our blog page to find Your Recipe
                 </p>
-               <Link to="/recipe"><button className='btn btn-lg btn-primary'>Find Recipe</button></Link>
+              <button className='btn btn-lg btn-outline-info'>Find Recipe</button>
             </div>
            </div>
             <h2 className='text-center mb-4 mt-4 p-4'>In which chef do You Like ?</h2>
