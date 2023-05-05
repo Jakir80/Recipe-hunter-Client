@@ -7,7 +7,7 @@ import './SignUp.css';
 const SignUp = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('')
-    const { createUser, googlesign, handlegithublogin } = useContext(AuthContext);
+    const { createUser, googlesign, handlegithublogin,updateUser } = useContext(AuthContext);
     const handlegooglesignin = () => {
         googlesign()
     }
@@ -21,6 +21,8 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
+        const photoURL=form.photo.value;
+        const name=form.name.value;
         console.log(email, password, confirm)
         form.reset();
         setError('');
@@ -36,7 +38,7 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
+                updateUser(loggedUser,name,photoURL)
                 setSuccess("user created successfully")
             })
             .catch(error => {
@@ -52,11 +54,15 @@ const SignUp = () => {
             <form onSubmit={handleSignUp}>
                 <div className="form-control">
                     <label htmlFor="text">Phot url</label>
-                    <input type="text" name="photo" id="" required />
+                    <input type="text" name="photo" id=""  />
                 </div>
                 <div className="form-control">
                     <label htmlFor="email">Email</label>
                     <input type="email" name="email" id="" required />
+                </div>
+                <div className="form-control">
+                    <label htmlFor="name">Name</label>
+                    <input type="text" name="name" id="" required />
                 </div>
                 <div className="form-control">
                     <label htmlFor="password">Password</label>

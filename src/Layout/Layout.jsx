@@ -6,11 +6,13 @@ import Menubar from '../Routs/Menubar';
 import './layout.css';
 const Layout = () => {
     return (
-        <div className='container'>
+      <>
             <Menubar></Menubar>
+        <div className='container'>
             <div className='outlet'><Outlet /></div>
-            <Footer />
         </div>
+            <Footer />
+      </>
     );
 };
 

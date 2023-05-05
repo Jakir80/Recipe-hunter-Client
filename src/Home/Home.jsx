@@ -7,6 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 import Food from '../Food/Food';
 import TraditionalFood from '../Traditional/TraditionalFood';
 import SingleChef from '../singleChef/SingleChef';
+import './home.css';
 const Home = () => {
     const traditionalfoods = useLoaderData()
     const [chef, setChef] = useState([])
@@ -19,7 +20,7 @@ const Home = () => {
         .then(data => setFood(data))
     return (
         <div className='pt-4 mt-4'>
-            <div className='d-flex gap-2 justify-center align-items-center'>
+            <div className='d-flex  gap-2 justify-center align-items-center'>
                 <img className='w-75' src="http://www.veepixel.com/tf/html/sous/assets/images/home_03_01.jpg" alt="" />
                 <div>
                     <h1 className='font-bold text-primary'>Find Your <br /> Cooking Recipe</h1>

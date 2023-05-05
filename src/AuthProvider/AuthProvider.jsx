@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import React, { createContext, useEffect, useState } from 'react';
 import app from "../Firebase/firebase.config";
 // import app from "../Firebase/firebase.config";
@@ -62,7 +62,17 @@ const AuthProvider = ({children}) => {
             return unsubscribe();
         }
     }, [])
+const updateUser =(loggedUser,name,photurl)=>{
+return updateProfile(loggedUser,{
+    displayName:name,
+    photoURL:photurl
 
+})
+.then()
+.catch(error=>{
+    console.log(error.message)
+})
+}
     const authInfo = {
         user,
         loading,
@@ -70,7 +80,8 @@ const AuthProvider = ({children}) => {
         signIn,
         logOut,
         googlesign,
-        handlegithublogin
+        handlegithublogin,
+        updateUser
     }
 
     return (
